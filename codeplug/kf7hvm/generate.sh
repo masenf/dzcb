@@ -6,10 +6,9 @@ python -m dzcb \
     --pnwdigital \
     --seattledmr \
     --default-k7abd \
-    --farnsworth-template-json $DIR/md380-uhf.json \
-                               $DIR/md380-vhf.json \
-                               $DIR/md390-uhf.json \
-                               $DIR/md390-vhf.json \
+    --repeaterbook-proximity-csv $DIR/prox.csv \
+    --k7abd $DIR/k7abd \
+    --farnsworth-template-json $DIR/kf7hvm-md-uv380.json \
     --scanlists-json $DIR/scanlists.json \
     --order-json $DIR/order.json \
-$OUTPUT/default-tyt-md380
+$OUTPUT/kf7hvm
