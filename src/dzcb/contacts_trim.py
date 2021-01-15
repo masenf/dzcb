@@ -3,7 +3,7 @@ dzcb.contacts_trim - remove contacts to get under radio limits
 """
 import sys
 
-remove_suffixes = [",", ",GR", ",CY", ",CN", ",BE", ",FR", ",ES", ",IT", ",RU", ",PL", ",DE", ",PT", ",TR", ",SI", ",JP", ",Korea Republic of", ",PH", ",MY", ",TH", ",AR", ",BR", ",CL", ",CO", ",VE", ",UY", ",SE", ",CH", ",CZ", ",SK", "BA", "HR", "AT"]
+remove_suffixes = [",", ",GR", ",CY", ",CN", ",BE", ",FR", ",ES", ",IT", ",RU", ",PL", ",DE", ",PT", ",TR", ",SI", ",JP", ",Korea Republic of", ",PH", ",MY", ",TH", ",AR", ",BR", ",CL", ",CO", ",VE", ",UY", ",SE", ",CH", ",CZ", ",SK", "BA", "HR", "AT", "DK", "NO"]
 
 total = 0
 
