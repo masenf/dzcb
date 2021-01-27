@@ -360,7 +360,7 @@ def Talkgroup_to_dict(index, talkgroup):
     return {
         "No.": str(index + 1),
         "Radio ID": str(talkgroup.dmrid),
-        "Name": talkgroup.name,
+        "Name": talkgroup.name_with_timeslot,
         "Call Type": str(talkgroup.kind) + " Call",
         "Call Alert": NONE,
     }
@@ -368,7 +368,7 @@ def Talkgroup_to_dict(index, talkgroup):
 
 def Talkgroup_to_channel_detail(talkgroup):
     return {
-        "Contact": talkgroup.name,
+        "Contact": talkgroup.name_with_timeslot,
         "Contact Call Type": str(talkgroup.kind) + " Call",
         "Contact TG/DMR ID": talkgroup.dmrid,
         "Slot": str(talkgroup.timeslot),
