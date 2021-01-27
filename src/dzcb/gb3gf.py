@@ -14,12 +14,12 @@ logger = logging.getLogger(__name__)
 TALKGROUP_LIST_OVERFLOW = [
     "Michigan 1",
     "Ontario 2",
-    "PS1-DNU",
-    "PS2-DNU",
-    "SNARS 1~2",
+    "PS1-DNU 1",
+    "PS2-DNU 2",
+    "SNARS 1-2",
     "USA 2",
     "Worldwide 2",
-    "TAC Eng 123",
+    "TAC Eng 123 2",
     "WW English 2",
     "SoCal 2",
     "Audio Test 2",
@@ -49,7 +49,7 @@ def Codeplug_to_gb3gf_opengd77_csv(cp, output_dir):
         for tg in cp.contacts:
             csvw.writerow(
                 {
-                    "Contact Name": tg.name,
+                    "Contact Name": tg.name_with_timeslot,
                     "ID": tg.dmrid,
                     "ID Type": str(tg.kind),
                     "TS Override": str(tg.timeslot),
@@ -95,7 +95,7 @@ def Codeplug_to_gb3gf_opengd77_csv(cp, output_dir):
                     "RX Tone": "None",
                     "TX Tone": "None",
                     "Colour Code": channel.color_code,
-                    "Contact": channel.talkgroup.name if channel.talkgroup else "N/A",
+                    "Contact": channel.talkgroup.name_with_timeslot if channel.talkgroup else "N/A",
                     "TG List": channel.grouplist.name if channel.grouplist else "None",
                 }
             d.update(
