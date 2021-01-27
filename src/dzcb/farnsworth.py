@@ -18,7 +18,6 @@ value_replacements = {
 }
 
 Contact_name_map = dict(
-    name="Name",
     dmrid="CallID",
     kind="CallType",
 )
@@ -27,12 +26,13 @@ Contact_name_map = dict(
 def Contact_to_dict(c):
     d = dict(
         CallReceiveTone="No",
+        Name=c.name_with_timeslot,
     )
     d.update(
         {
             Contact_name_map[k]: value_replacements.get(v, str(v))
             for k, v in attr.asdict(c).items()
-            if k in attr.fields_dict(Contact)
+            if k in attr.fields_dict(Contact) and k in Contact_name_map
         }
     )
     return d
@@ -173,7 +173,7 @@ def DigitalChannel_to_dict(c):
         {
             "ChannelMode": "Digital",
             "RepeaterSlot": str(c.talkgroup.timeslot) if c.talkgroup else 1,
-            "ContactName": str(c.talkgroup.name) if c.talkgroup else "Parrot 1",
+            "ContactName": str(c.talkgroup.name_with_timeslot) if c.talkgroup else "Parrot 1",
             "GroupList": str(c.grouplist.name) if c.grouplist else None,
             "ScanList": dzcb.munge.zone_name(c.scanlist, NAME_MAX),
         }
