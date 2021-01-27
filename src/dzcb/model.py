@@ -336,7 +336,7 @@ def uniquify_contacts(contacts):
     """
     ctd = {}
     for ct in contacts:
-        stored_ct = ctd.setdefault(ct.name, ct)
+        stored_ct = ctd.setdefault(ct.name_with_timeslot, ct)
         if stored_ct.dmrid != ct.dmrid:
             raise RuntimeError("Two contacts named {} have different IDs: {} {}".format(ct.name, ct.dmrid, stored_ct.dmrid))
     return list(ctd.values())
