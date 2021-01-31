@@ -1,0 +1,23 @@
+D Z C B - initials for DMR Zone Channel Builder
+
+is a codeplug generator written in Python targeting DMR radios such
+as the TYT MD-UV380, Anytone 878, and Radioddity OpenGD77, among others.
+
+dzcb fetches frequency information from a variety of sources,
+most notably PNWDigital's auto-generated repeater/talkgroup
+matrix and Repeaterbook proximity search for known repeaters
+within some distance to a point of interest.
+
+the analog and digital channels from multiple sources are combined
+and filtered according to built-in and user-specified rules.
+
+finally, dzcb converts the generated codeplug to a variety of output
+formats to be further modified by hand, if desired, and written to the
+radio.
+
+the separate, but related repo, "example-codeplug", leverages
+dzcb and github actions to automatically generate codeplugs
+in the cloud whenever the codeplug source files are modified.
+
+next i'll demonstrate how to download a cloud-generated codeplug
+and open it in each supported CPS.
